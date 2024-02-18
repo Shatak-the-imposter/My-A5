@@ -104,7 +104,7 @@
                 </div>
                 <img src="images/cupon-devider.png" alt="" srcset="">
                 <div class="lg:space-y-3 p-8  pt-16 lg:pt-16 ">
-                    <h2 class="text-2xl lg:text-5xl font-extrabold">New15</h2>
+                    <h2 class="text-2xl lg:text-5xl font-extrabold">NEW15</h2>
                     <p class="text-lg text-[#03071299] uppercase">Coupon Code</p>
                 </div>
 
@@ -117,7 +117,7 @@
                 </div>
                 <img src="images/cupon-devider.png" alt="" srcset="">
                 <div class="lg:space-y-3 p-8 pt-16 lg:pt-16">
-                    <h2 class="text-2xl lg:text-5xl font-extrabold">New15</h2>
+                    <h2 class="text-2xl lg:text-5xl font-extrabold">Couple 20</h2>
                     <p class="text-lg text-[#03071299] uppercase">Coupon Code</p>
                 </div>
 
@@ -380,17 +380,18 @@
                         <h2 class="text-[#03071299]">=</h2>
                         <h2 class="text-[#03071299]" ><span id="total-price" >0</span></h2>
                     </div>
-                    <div class="mb-4 my-8">
+                    <div class="mb-4 my-8 " id="coupon-container">
                         <label for="cupon-code" class="text-black text-xl font-bold mb-2">Have a Coupon?</label>
                         <div class="join ">
-                            <input class="input input-bordered join-item" placeholder="Apply Coupon" />
-                            <button class="btn join-item rounded-r-full bg-[#1dd10066]">Apply</button>
+                            <input class="input  input-bordered join-item" placeholder="Apply Coupon" id="applied-coupon" />
+                            <button class="btn join-item rounded-r-full bg-[#1dd10066]" onclick="applyCoupon()">Apply</button>
                         </div>
+                        <h3 class="text-red-500 hidden" id="wrong-coupon">****Please enter a Valid Coupon******</h3>
                     </div>
                     <div class="flex  justify-around">
                         <h2 class="text-black font-semibold">Grand Total Price</h2>
                         <h2 class="text-[#03071299]">=</h2>
-                        <h2 class="text-[#03071299]"></h2>
+                        <h2 class="text-[#03071299]" id="grand-total"></h2>
                     </div>
                 </div>
 

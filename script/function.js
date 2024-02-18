@@ -2,6 +2,7 @@ const allSeat = document.getElementsByClassName("seat")
 let availabaleSeat = 40;
 let selectedSeat = 0;
 let totalPrice = 0;
+
 for (const seat of allSeat) {
     seat.addEventListener('click', function (event) {
         seat.classList.add('bg-[#1DD100]');
@@ -33,8 +34,29 @@ for (const seat of allSeat) {
     })
 }
 
-function applyCupon(){
-    
+function applyCoupon(){
+    let grandTotal = 0;
+    let appliedCoupon = document.getElementById('applied-coupon');
+    let appliedCouponText = appliedCoupon.value;
+    if(appliedCouponText === 'Couple 20' ){
+        grandTotal = grandTotal +totalPrice-(totalPrice*0.2);
+        setInnerText('grand-total' , grandTotal)
+        const couponContainer = document.getElementById('coupon-container');
+        couponContainer.classList.add('hidden')
+
+    }
+    else if( appliedCouponText === 'NEW15' ){
+        grandTotal = grandTotal +totalPrice-(totalPrice*0.15);
+        setInnerText('grand-total' , grandTotal);
+        const couponContainer = document.getElementById('coupon-container');
+        couponContainer.classList.add('hidden')
+
+    }
+    else{
+        const wrongCoupon = document.getElementById('wrong-coupon');
+        wrongCoupon.classList.remove('hidden')
+    }
+
 }
 
 
