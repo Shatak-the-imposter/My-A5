@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Assingment-5</title>
+    <link rel="stylesheet" href="style.css">
     <!-- Daisy UI and Tailwind  -->
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
@@ -149,7 +150,8 @@
                         </div>
                         <div>
                             <a class="btn border border-[#1dd10066] bg bg-[#1dd1001a] text-[#1DD100]"><img
-                                    src="images/bus-icon.png" alt="" srcset=""><span id="availabale-seat">40</span>Seats left </a>
+                                    src="images/bus-icon.png" alt="" srcset=""><span id="availabale-seat">40</span>Seats
+                                left </a>
                         </div>
                     </div>
                     <!-- route -->
@@ -358,31 +360,19 @@
                 <h2 class=" text-xl lg:text-2xl font-bold text-left pt-5">Select Your Seat</h2>
                 <hr class="border-t border-dashed border-black my-6">
 
-               
+
                 <!-- my cart -->
                 <div class=" bg-[#F7F8F8] p-5 rounded-2xl border-gray-200 shadow-md mr-4">
                     <div class="flex text-xl font-semibold justify-around">
-                        <h2>Seat<sup class="text-green-500" id="selected-seat">0</sup></h2>
+                        <h2>Seat<sup class="text-green-500" id="selected-seat-count">0</sup></h2>
                         <h2>Class</h2>
                         <h2>Price</h2>
                     </div>
                     <hr class="border-t border-dashed border-gray-300 my-6">
-                    <div class="flex  justify-around">
-                        <h2 class="text-[#03071299]">Seat</h2>
-                        <h2 class="text-[#03071299]">Class</h2>
-                        <h2 class="text-[#03071299]">Price</h2>
-                    </div>
-                    <hr class="border-t border-dashed border-gray-300 my-6">
-                    <div class="flex  justify-around">
-                        <h2 class="text-[#03071299]">Seat</h2>
-                        <h2 class="text-[#03071299]">Class</h2>
-                        <h2 class="text-[#03071299]">Price</h2>
-                    </div>
-                    <hr class="border-t border-dashed border-gray-300 my-6">
-                    <div class="flex  justify-around">
-                        <h2 class="text-[#03071299]">Seat</h2>
-                        <h2 class="text-[#03071299]">Class</h2>
-                        <h2 class="text-[#03071299]">Price</h2>
+                    <div class="flex  justify-around" >
+                        <ul class="" id="selected-booked-seat">
+                           
+                        </ul>
                     </div>
                     <hr class="border-t border-dashed border-gray-300 my-6">
                     <div class="flex  justify-around">
