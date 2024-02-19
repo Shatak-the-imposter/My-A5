@@ -6,7 +6,7 @@ let totalPrice = 0;
 for (const seat of allSeat) {
     seat.addEventListener('click', function (event) {
 
-        if (selectedSeat < 4) {
+        if (selectedSeat < 4 ) {
             availabaleSeat = availabaleSeat - 1;
             setInnerText('availabale-seat', availabaleSeat);
             selectedSeat = selectedSeat + 1;
@@ -17,6 +17,7 @@ for (const seat of allSeat) {
 
         else {
             selectedContainer.classList.remove(li);
+
         }
 
         // dom and creat cart list
@@ -46,7 +47,7 @@ for (const seat of allSeat) {
         }
 
 
-        totalPrice = parseInt(totalPrice) + parseInt(seatFair.innerText);
+        totalPrice = parseFloat(totalPrice) + parseFloat(seatFair.innerText);
         setInnerText('total-price', totalPrice)
         if (totalPrice === 2200) {
             document.getElementById('coupon-container').classList.remove('hidden')
@@ -103,3 +104,5 @@ for (inputValue of allInputValue) {
 function setInnerText(id, value) {
     document.getElementById(id).innerText = value;
 }
+
+

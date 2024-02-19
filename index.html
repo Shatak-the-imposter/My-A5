@@ -64,7 +64,7 @@
                         reliable
                         services. With a commitment to punctuality and safety, they cater to diverse transportation
                         needs,earning trust and satisfaction from passengers.</p>
-                    <button class="btn bg-[#1DD100] border-none lg:mt-8 lg:mb-16" id="buy-ticket"><a href="">Buy Tickets</a></button>
+                    <button class="btn bg-[#1DD100] border-none lg:mt-8 lg:mb-16" id="buy-ticket"><a href="#buy-ticket-section">Buy Tickets</a></button>
                 </div>
             </div>
         </div>
@@ -129,7 +129,7 @@
                 class="btn  mx-auto items-center border border-[#1DD100] text-[#1DD100]">See All Offers</button></h4>
     </section>
 
-    
+
     <!-- SK Paribahan section  -->
     <section class="bg-[#F7F8F8] lg:rounded-t-[88px] w-full ">
 
@@ -193,7 +193,7 @@
         <!-- bus seat selection  -->
 
         <div
-            class="flex flex-col lg:flex-row justify-between bg-white shadow-md mx-auto lg:max-w-[1200px] mt-5 rounded-3xl pb-10" >
+            class="flex flex-col lg:flex-row justify-between bg-white shadow-md mx-auto lg:max-w-[1200px] mt-5 rounded-3xl pb-10" id="buy-ticket-section">
             <!-- Seat -->
             <div class=" lg:w-[690px] lg:border-r-2 lg:border-dashed lg: border-gray-300 border-none ">
                 <h2 class=" text-xl lg:text-2xl font-bold text-left pl-5 pt-5">Select Your Seat</h2>
@@ -237,11 +237,11 @@
                 <div class="flex space-x-8 lg:justify-around justify-center items-center mt-4">
                     <h2 class="pl-5">A</h2>
                     <div class="  w-[270px] lg:w-[600px] ">
-                        <kbd class="kbd lg:w-28 lg:h-12 seat" id="seat-id">A1</kbd>
-                        <kbd class="kbd lg:w-28 lg:h-12 seat" id="seat-id">A2</kbd>
+                        <kbd class="kbd lg:w-28 lg:h-12 seat" id="seat-id" onclick="disableButton()">A1</kbd>
+                        <kbd class="kbd lg:w-28 lg:h-12 seat" id="seat-id" onclick="disableButton()">A2</kbd>
                         <span class="ml-14">
-                            <kbd class="kbd lg:w-28 lg:h-12 seat" id="seat-id">A3</kbd>
-                            <kbd class="kbd lg:w-28 lg:h-12 seat" id="seat-id">A4</kbd>
+                            <kbd class="kbd lg:w-28 lg:h-12 seat" id="seat-id" onclick="disableButton()">A3</kbd>
+                            <kbd class="kbd lg:w-28 lg:h-12 seat" id="seat-id" onclick="disableButton()">A4</kbd>
                         </span>
                     </div>
                 </div>
@@ -380,7 +380,7 @@
                     <div class="flex  justify-around">
                         <h2 class="text-black font-semibold">Total Price</h2>
                         <h2 class="text-[#03071299]">=</h2>
-                        <h2 class="text-[#03071299]"><span id="total-price">0</span></h2>
+                        <h2 class="text-[#03071299]"><span>BDT</span> <span id="total-price">0</span></h2>
                     </div>
                     <div class="mb-4 my-8 hidden" id="coupon-container">
                         <label for="cupon-code" class="text-black text-xl font-bold mb-2">Have a Coupon?</label>
@@ -395,7 +395,7 @@
                     <div class="flex  justify-around hidden" id="grand-total-container">
                         <h2 class="text-black font-semibold">Grand Total Price</h2>
                         <h2 class="text-[#03071299]">=</h2>
-                        <h2 class="text-[#03071299]" id="grand-total"></h2>
+                        <h2 class="text-[#03071299]" ><span>BDT  </span><span id="grand-total"></span></h2>
                     </div>
                 </div>
 
