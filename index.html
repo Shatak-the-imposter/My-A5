@@ -64,7 +64,7 @@
                         reliable
                         services. With a commitment to punctuality and safety, they cater to diverse transportation
                         needs,earning trust and satisfaction from passengers.</p>
-                    <button class="btn bg-[#1DD100] border-none lg:mt-8 lg:mb-16">Get Started</button>
+                    <button class="btn bg-[#1DD100] border-none lg:mt-8 lg:mb-16" id="buy-ticket">Buy Tickets</button>
                 </div>
             </div>
         </div>
@@ -191,7 +191,7 @@
         <!-- bus seat selection  -->
 
         <div
-            class="flex flex-col lg:flex-row justify-between bg-white shadow-md mx-auto lg:max-w-[1200px] mt-5 rounded-3xl">
+            class="flex flex-col lg:flex-row justify-between bg-white shadow-md mx-auto lg:max-w-[1200px] mt-5 rounded-3xl pb-10">
             <!-- Seat -->
             <div class=" lg:w-[690px] lg:border-r-2 lg:border-dashed lg: border-gray-300 border-none ">
                 <h2 class=" text-xl lg:text-2xl font-bold text-left pl-5 pt-5">Select Your Seat</h2>
@@ -211,7 +211,7 @@
 
                 <div class="flex space-x-8 lg:justify-around justify-center items-center mt-4">
                     <h2></h2>
-                    <div class="  w-[270px] lg:w-[600px] ">
+                    <div class="  w-[270px] lg:w-[600px] " id="buy-ticket">
                         <kbd class="kbd bg-white border-none lg:w-28 lg:h-12 "></kbd>
                         <kbd class="kbd bg-white border-none  lg:w-28 lg:h-12"></kbd>
                         <span class="ml-14">
@@ -235,10 +235,10 @@
                 <div class="flex space-x-8 lg:justify-around justify-center items-center mt-4">
                     <h2 class="pl-5">A</h2>
                     <div class="  w-[270px] lg:w-[600px] ">
-                        <kbd class="kbd lg:w-28 lg:h-12 seat" id="seat-id" >A1</kbd>
+                        <kbd class="kbd lg:w-28 lg:h-12 seat" id="seat-id">A1</kbd>
                         <kbd class="kbd lg:w-28 lg:h-12 seat" id="seat-id">A2</kbd>
                         <span class="ml-14">
-                            <kbd class="kbd lg:w-28 lg:h-12 seat" id="seat-id" >A3</kbd>
+                            <kbd class="kbd lg:w-28 lg:h-12 seat" id="seat-id">A3</kbd>
                             <kbd class="kbd lg:w-28 lg:h-12 seat" id="seat-id">A4</kbd>
                         </span>
                     </div>
@@ -369,26 +369,28 @@
                         <h2>Price</h2>
                     </div>
                     <hr class="border-t border-dashed border-gray-300 my-6">
-                    <div class="flex  justify-around" >
+                    <div class="flex  justify-around">
                         <ul class="" id="selected-booked-seat">
-                           
+
                         </ul>
                     </div>
                     <hr class="border-t border-dashed border-gray-300 my-6">
                     <div class="flex  justify-around">
                         <h2 class="text-black font-semibold">Total Price</h2>
                         <h2 class="text-[#03071299]">=</h2>
-                        <h2 class="text-[#03071299]" ><span id="total-price" >0</span></h2>
+                        <h2 class="text-[#03071299]"><span id="total-price">0</span></h2>
                     </div>
-                    <div class="mb-4 my-8 " id="coupon-container">
+                    <div class="mb-4 my-8 hidden" id="coupon-container">
                         <label for="cupon-code" class="text-black text-xl font-bold mb-2">Have a Coupon?</label>
                         <div class="join ">
-                            <input class="input  input-bordered join-item" placeholder="Apply Coupon" id="applied-coupon" />
-                            <button class="btn join-item rounded-r-full bg-[#1dd10066]" onclick="applyCoupon()">Apply</button>
+                            <input class="input  input-bordered join-item" placeholder="Apply Coupon"
+                                id="applied-coupon" />
+                            <button class="btn join-item rounded-r-full bg-[#1dd10066]" onclick="applyCoupon()"
+                                id="apply-btn">Apply</button>
                         </div>
                         <h3 class="text-red-500 hidden" id="wrong-coupon">****Please enter a Valid Coupon******</h3>
                     </div>
-                    <div class="flex  justify-around">
+                    <div class="flex  justify-around hidden" id="grand-total-container">
                         <h2 class="text-black font-semibold">Grand Total Price</h2>
                         <h2 class="text-[#03071299]">=</h2>
                         <h2 class="text-[#03071299]" id="grand-total"></h2>
@@ -402,15 +404,15 @@
                         <label for="passengerName" class=" text-black text-xl font-bold mb-2">Passenger
                             Name</label>
                         <input type="text" id="passengerName" name="passengerName"
-                            class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500"
+                            class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500 "
                             required>
                     </div>
 
                     <!-- Phone Number field -->
                     <div class="mb-4">
                         <label for="phoneNumber" class="text-black text-xl font-bold mb-2">Phone Number</label>
-                        <input type="tel" id="phoneNumber" name="phoneNumber"
-                            class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500"
+                        <input type="number" id="phoneNumber" name="phoneNumber"
+                            class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500 input-value"
                             required>
                     </div>
 
@@ -418,19 +420,38 @@
                     <div class="mb-6">
                         <label for="email" class="text-black text-xl font-bold mb-2">Email</label>
                         <input type="email" id="email" name="email"
-                            class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500"
+                            class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500 "
                             required>
                     </div>
 
                     <!-- Submit button -->
-                    <button type="submit"
-                        class="w-full text-black px-4 py-2 rounded-md bg-[#1dd10066]  ">Submit</button>
+                    <button type="submit" class="w-full text-black px-4 py-2 rounded-md bg-[#1dd10066] hidden "
+                        id="submit-btn" onclick="my_modal_5.showModal()">Submit</button>
                 </div>
                 <!-- Form ends here -->
                 <div class="flex justify-around mt-5 mb-8">
                     <p class="text-[#03071299] underline decoration-solid "><a href="">Terms and Condition</a></p>
                     <p class="text-[#03071299] underline decoration-solid "><a href="">Cancellation Policy</a></p>
                 </div>
+                <!-- modal pop up -->
+                <!-- Open the modal using ID.showModal() method -->
+                <!-- <button class="btn" >open modal</button> -->
+                <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle text-center">
+                    <div class="modal-box text-center">
+                        <img class="mx-auto mb-5" src="images/success.png" alt="" srcset="">
+                        <h3 class="font-bold text-green-400 text-3xl mb-3 ">SUCCESS</h3>
+                        <h3 class="font-bold text-lg">Thank you for Booking Our Bus Seats. 
+                            We are working hard to find the best service and deals for you. </h3>
+                        <p class="py-4">Shortly you will find a confirmation in your email.</p>
+                        <div class="">
+                            <form method="dialog">
+                                <!-- if there is a button in form, it will close the modal -->
+                                <button class="btn bg-green-500 text-white w-full mt-5">Continue</button>
+                            </form>
+                        </div>
+                    </div>
+                </dialog>
+
             </div>
         </div>
 
@@ -439,7 +460,7 @@
     </section>
 
     <!-- Footer Section -->
-    <section>
+    <section class=" mt-8">
         <footer class="footer p-10 bg-neutral text-neutral-content">
 
             <p class="text-xl font-bold">SK-Travels Ltd.<br>Providing reliable tech since 1992</p>
